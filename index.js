@@ -96,6 +96,10 @@ window.addEventListener("load", function () {
   }
 });
 
+window.generateRandomBeingName = function () {
+  return creatures[Math.floor(Math.random() * creatures.length)];
+};
+
 let firstSelectedCell = null;
 
 function handleCellClick(event) {
@@ -126,12 +130,13 @@ function handleCellClick(event) {
 function checkForMatches() {
   const cells = Array.from(document.querySelectorAll(".cell"));
   const rows = [];
-
   const gridCols = parseInt(
     getComputedStyle(document.getElementById("map")).getPropertyValue(
       "--cols-count"
     )
   );
+
+  // Forming an array of strings
   for (let i = 0; i < cells.length; i += gridCols) {
     rows.push(cells.slice(i, i + gridCols));
   }
@@ -141,6 +146,7 @@ function checkForMatches() {
 
   if (matches.length > 0) {
     hasMatch = true;
+
     matches.forEach(({ row, col }) => {
       const cell = rows[row][col];
       cell.dataset.being = "";
@@ -149,9 +155,13 @@ function checkForMatches() {
 
     matches.forEach(({ row, col }) => {
       const cell = rows[row][col];
-      const creature = creatures[Math.floor(Math.random() * creatures.length)];
+      const creature = window.generateRandomBeingName();
       fillCellWithCreature(cell, creature);
     });
+
+    if (checkForMatches()) {
+      hasMatch = true;
+    }
   }
 
   return hasMatch;
