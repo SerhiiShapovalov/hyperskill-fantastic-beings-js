@@ -1,3 +1,8 @@
+:root {
+  --rows-count: 1;
+  --cols-count: 1;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -40,12 +45,19 @@ body {
   transform: translateX(-50%);
   width: 60vh;
   height: 60vh;
-  border-collapse: collapse;
+  display: grid;
+  grid-template-rows: repeat(var(--rows-count), 1fr);
+  grid-template-columns: repeat(var(--cols-count), 1fr);
+  gap: 1px;
+  border: 1px solid rgba(103, 101, 168, 1);
 }
 
 .cell {
-  width: 20%;
-  height: 20%;
-  border: 1px solid rgba(103, 101, 168, 1);
   background-color: rgba(103, 101, 168, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  border: 1px solid rgba(103, 101, 168, 1);
 }
