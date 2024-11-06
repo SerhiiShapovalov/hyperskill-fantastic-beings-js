@@ -141,6 +141,40 @@ body {
   opacity: 1;
 }
 
+@keyframes frameAnimation {
+  0% {
+    background-image: url("images/frames/frame_0_delay-0.07s.png");
+  }
+  14% {
+    background-image: url("images/frames/frame_1_delay-0.07s.png");
+  }
+  28% {
+    background-image: url("images/frames/frame_2_delay-0.07s.png");
+  }
+  42% {
+    background-image: url("images/frames/frame_3_delay-0.07s.png");
+  }
+  56% {
+    background-image: url("images/frames/frame_4_delay-0.07s.png");
+  }
+  70% {
+    background-image: url("images/frames/frame_5_delay-0.07s.png");
+  }
+  84% {
+    background-image: url("images/frames/frame_6_delay-0.07s.png");
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.disappear-animation::before {
+  content: "";
+  animation: 0.8s frameAnimation;
+  background-size: cover;
+  z-index: 5;
+}
+
 .moves-board {
   display: flex;
   flex-direction: column;
@@ -211,38 +245,4 @@ body {
   #game-footer {
     padding: 10px;
   }
-}
-
-@keyframes frameAnimation {
-  0% {
-    background-image: url("images/frames/frame_0_delay-0.07s.png");
-  }
-  14% {
-    background-image: url("images/frames/frame_1_delay-0.07s.png");
-  }
-  28% {
-    background-image: url("images/frames/frame_2_delay-0.07s.png");
-  }
-  42% {
-    background-image: url("images/frames/frame_3_delay-0.07s.png");
-  }
-  56% {
-    background-image: url("images/frames/frame_4_delay-0.07s.png");
-  }
-  70% {
-    background-image: url("images/frames/frame_5_delay-0.07s.png");
-  }
-  84% {
-    background-image: url("images/frames/frame_6_delay-0.07s.png");
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.disappear-animation {
-  animation: frameAnimation 0.8s steps(7) forwards;
-  backface-visibility: hidden;
-  background-size: cover;
-  z-index: 3;
 }

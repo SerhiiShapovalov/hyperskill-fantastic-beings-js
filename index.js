@@ -216,7 +216,7 @@ function checkForMatches() {
           const creature = window.generateRandomBeingName();
           fillCellWithCreature(cell, creature);
           // Check again for matches if we filled any cells
-          setTimeout(() => checkForMatches(), 0);
+          setTimeout(() => checkForMatches(), 800);
         },
         { once: true }
       );
