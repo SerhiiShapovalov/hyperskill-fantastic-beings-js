@@ -77,8 +77,8 @@ body {
   grid-template-rows: repeat(var(--rows-count), 1fr);
   grid-template-columns: repeat(var(--cols-count), 1fr);
   gap: 2px;
-  padding-bottom: 40px;
-  flex-grow: 1;
+  margin-bottom: 20px;
+  flex-grow: 1 1 auto;
   z-index: 0;
 }
 
