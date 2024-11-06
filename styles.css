@@ -29,13 +29,10 @@ body {
 
 #board {
   width: 100vw;
-  /* height: 100vh; */
+  height: 100vh;
   background: url("images/board-bg.png") no-repeat center center;
   background-size: cover;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 #status-bar {
@@ -51,7 +48,6 @@ body {
   gap: 5px;
   padding: 3px;
   color: white;
-  z-index: 1;
 }
 
 @media screen and (min-width: 480px) {
@@ -78,8 +74,6 @@ body {
   grid-template-rows: repeat(var(--rows-count), 1fr);
   grid-template-columns: repeat(var(--cols-count), 1fr);
   gap: 2px;
-  flex-grow: 1;
-  z-index: 0;
 }
 
 @media screen and (min-width: 480px) {
@@ -89,40 +83,6 @@ body {
   }
 }
 
-@keyframes frameAnimation {
-  0% {
-    background-image: url("images/frames/frame_0_delay-0.07s.png");
-  }
-  14% {
-    background-image: url("images/frames/frame_1_delay-0.07s.png");
-  }
-  28% {
-    background-image: url("images/frames/frame_2_delay-0.07s.png");
-  }
-  42% {
-    background-image: url("images/frames/frame_3_delay-0.07s.png");
-  }
-  56% {
-    background-image: url("images/frames/frame_4_delay-0.07s.png");
-  }
-  70% {
-    background-image: url("images/frames/frame_5_delay-0.07s.png");
-  }
-  84% {
-    background-image: url("images/frames/frame_6_delay-0.07s.png");
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-.disappear-animation {
-  animation: frameAnimation 0.8s steps(7) forwards;
-  backface-visibility: hidden;
-  background-size: cover;
-  z-index: 3;
-}
-
 .cell {
   position: relative;
   background-color: rgba(103, 101, 168, 0.4);
@@ -130,6 +90,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+  color: white;
   border: 1px solid rgba(103, 101, 168, 1);
   padding: 5px;
 }
@@ -239,11 +200,44 @@ body {
   padding: 3px;
   font-size: 1.5em;
   color: white;
-  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
   #game-footer {
     padding: 10px;
   }
+}
+
+@keyframes frameAnimation {
+  0% {
+    background-image: url("images/frames/frame_0_delay-0.07s.png");
+  }
+  14% {
+    background-image: url("images/frames/frame_1_delay-0.07s.png");
+  }
+  28% {
+    background-image: url("images/frames/frame_2_delay-0.07s.png");
+  }
+  42% {
+    background-image: url("images/frames/frame_3_delay-0.07s.png");
+  }
+  56% {
+    background-image: url("images/frames/frame_4_delay-0.07s.png");
+  }
+  70% {
+    background-image: url("images/frames/frame_5_delay-0.07s.png");
+  }
+  84% {
+    background-image: url("images/frames/frame_6_delay-0.07s.png");
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.disappear-animation {
+  animation: frameAnimation 0.8s steps(7) forwards;
+  backface-visibility: hidden;
+  background-size: cover;
+  z-index: 3;
 }
