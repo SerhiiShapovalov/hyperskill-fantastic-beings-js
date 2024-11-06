@@ -29,7 +29,7 @@ body {
 
 #board {
   width: 100%;
-  /* height: 100%; */
+  height: 100%;
   background: url("images/board-bg.png") no-repeat center center;
   background-size: cover;
   position: relative;
@@ -88,7 +88,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) {
   #map {
     width: 60vh;
     height: 60vh;
@@ -216,6 +216,7 @@ body {
 }
 
 .beings-for-win-wrap {
+  font-size: 0.8em;
   text-align: center;
 }
 
@@ -225,7 +226,7 @@ body {
 
 .zouwu,
 .kelpie {
-  font-size: 1em;
+  /*margin-left: -1vw;*/
   position: relative;
   right: 1vw;
   bottom: 0.5vw;
