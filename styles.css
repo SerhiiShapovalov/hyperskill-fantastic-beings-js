@@ -33,6 +33,7 @@ body {
   background: url("images/board-bg.png") no-repeat center center;
   background-size: cover;
   position: relative;
+  padding-bottom: 5.5vw;
 }
 
 #status-bar {
