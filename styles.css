@@ -77,7 +77,6 @@ body {
   grid-template-rows: repeat(var(--rows-count), 1fr);
   grid-template-columns: repeat(var(--cols-count), 1fr);
   gap: 2px;
-  padding-bottom: 40px;
   flex-grow: 1;
   z-index: 0;
 }
@@ -228,15 +227,8 @@ body {
 .kelpie {
   font-size: 1em;
   position: relative;
-  right: 1.3vw;
+  right: 1vw;
   bottom: 0.5vw;
-}
-
-@media screen and (min-width: 1024px) {
-  .zouwu,
-  .kelpie {
-    font-size: 1.3em;
-  }
 }
 
 #game-footer {
