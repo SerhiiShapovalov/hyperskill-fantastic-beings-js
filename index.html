@@ -20,7 +20,7 @@
   </head>
   <body>
     <div id="board">
-      <div id="status-bar">
+      <header id="status-bar">
         <div class="beings-for-win-wrap" id="beings-for-win">
           <img
             class="zouwu-img"
@@ -39,11 +39,13 @@
         <div class="score-value-wrap">
           <p class="score-board">Score: <span id="score-value">0</span></p>
         </div>
-      </div>
-      <table id="map"></table>
-      <div id="game-footer">
+      </header>
+      <main>
+        <table id="map"></table>
+      </main>
+      <footer id="game-footer">
         Swap animals to form a sequence of three in a row
-      </div>
+      </footer>
     </div>
     <script src="index.js"></script>
   </body>
