@@ -274,9 +274,6 @@ function findMatches(rows) {
         matchLength += 1;
       } else {
         if (matchLength >= 3) {
-          console.log(
-            `Horizontal match: ${matchLength} creatures in row ${rowIndex}`
-          );
           for (let i = 0; i < matchLength; i += 1) {
             matches.push({
               row: rowIndex,
@@ -304,9 +301,6 @@ function findMatches(rows) {
         matchLength += 1;
       } else {
         if (matchLength >= 3) {
-          console.log(
-            `Vertical match: ${matchLength} creatures in column ${colIndex}`
-          );
           for (let i = 0; i < matchLength; i += 1) {
             matches.push({
               row: rowIndex - i,
